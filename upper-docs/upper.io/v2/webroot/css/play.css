@@ -4,3 +4,6 @@
 .play a.run:visited {
   color: #e74039;
 }
+main .CodeMirror {
+  height: 100%;
+}

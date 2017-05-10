@@ -3,6 +3,14 @@
 The `mysql` adapter for [MySQL][2] wraps the `github.com/go-sql-driver/mysql`
 driver written by [Julien Schmidt][1].
 
+## Basic use
+
+This page showcases the particularities of the [MySQL][2] adapter, if you're
+new to upper-db, you should take a look at the [getting started][3] page first.
+
+After you're done with the introduction, reading through the [examples][4] is
+highly recommended.
+
 ## Installation
 
 Use `go get` to download and install the adapter:
@@ -144,17 +152,17 @@ func main() {
   }
 
   // Inserting some rows into the "birthday" table.
-  birthdayCollection.Append(Birthday{
+  birthdayCollection.Insert(Birthday{
     Name: "Hayao Miyazaki",
     Born: time.Date(1941, time.January, 5, 0, 0, 0, 0, time.UTC),
   })
 
-  birthdayCollection.Append(Birthday{
+  birthdayCollection.Insert(Birthday{
     Name: "Nobuo Uematsu",
     Born: time.Date(1959, time.March, 21, 0, 0, 0, 0, time.UTC),
   })
 
-  birthdayCollection.Append(Birthday{
+  birthdayCollection.Insert(Birthday{
     Name: "Hironobu Sakaguchi",
     Born: time.Date(1962, time.November, 25, 0, 0, 0, 0, time.UTC),
   })
@@ -256,3 +264,5 @@ res = sess.Find().Select(db.Func("DISTINCT", "name"))
 
 [1]: https://github.com/go-sql-driver/mysql
 [2]: http://www.mysql.com
+[3]: /db.v2/getting-started
+[4]: /db.v2/examples

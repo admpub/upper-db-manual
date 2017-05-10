@@ -5,11 +5,13 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <link href="//fonts.googleapis.com/css?family=Raleway:500,700|Source+Serif+Pro:400,700|Source+Code+Pro:400,600" rel="stylesheet" type="text/css" />
 
-    <link href="https://demo.upper.io/static/example.css" rel="stylesheet" type="text/css" />
+    <link href="//demo.upper.io/static/example.css" rel="stylesheet" type="text/css" />
+    <link href="//demo.upper.io/static/codemirror.css" rel="stylesheet" type="text/css" />
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-    <script src="https://demo.upper.io/static/playground.js"></script>
-    <script src="https://demo.upper.io/static/snippets.js"></script>
+
+    <script src="//demo.upper.io/static/playground-full.js"></script>
+    <script src="//demo.upper.io/static/snippets.js"></script>
 
     <link href="{{ asset "/css/style.css" }}" rel="stylesheet" />
     <link href="{{ asset "/css/syntax.css" }}" rel="stylesheet">
@@ -83,7 +85,7 @@
                   <span>upper.io/db</span>
                 </a>
               </h1>
-              <p class="hero__description">It’s not an ORM, just a productive data access layer for Go</p>
+              <p class="hero__description">It's not an ORM, just a productive data access layer for Go</p>
             </div>
             <div class="github">
               <a class="github__icon" target="_blank" href="https://github.com/upper/db">Check out the code at Github</a>
@@ -124,8 +126,8 @@
               <div class="feature">
                 <h2 class="feature__title">{{ anchor "/getting-started" "Get started" }}</h2>
                 <p class="feature__description">
-                  {{ anchor "/getting-started" "Start here"}} if you want to
-                  <b>learn the basics</b> behind the <code>db</code> concept.
+                  If you're new you can {{ anchor "/getting-started" "start here"}}
+                  to read an intro and <b>learn the basics</b>.
                 </p>
                 <a href="{{ asset "/examples" }}" class="hidden">
                   <img class="feature__icon" src="{{ asset "images/figure-01.svg" }}" />
@@ -134,7 +136,8 @@
               <div class="feature">
                 <h2 class="feature__title">{{ anchor "/examples" "Play" }}</h2>
                 <p class="feature__description">
-                  See how to implement {{ anchor "/examples" "common patterns" }} and learn with <b>live examples</b>.
+                  Learn {{ anchor "/examples" "common patterns" }}
+                  and practise with <b>live examples</b>.
                 </p>
                 <a href="{{ asset "/examples" }}" class="hidden">
                   <img class="feature__icon" src="{{ asset "images/figure-02.svg" }}" />
@@ -151,12 +154,18 @@
                 </a>
               </div>
             </div>
-            <h2>See a demo</h2>
-            Check these <b>live examples</b> out, modify them and run them from within your browser!
+						<h2>Key features</h2>
+            <ul>
+              <li>Maps query results into Go structs</li>
+              <li>Lets you use plain SQL when you need to</li>
+              <li>Provides an (optional) set-oriented syntax that works the same on SQL and NoSQL databases</li>
+              <li>Easy syntax for transactions</li>
+              <li>That's all!</li>
+            </ul>
+            <h2>Try it!</h2>
+            The box below is a <b>live demo</b>, you can modify and run
+            read-only queries directly from your browser! Give it a try.
             <textarea class="go-playground-snippet" data-expanded="1" data-title="Live example: Retrieve a list of books">{{ include "webroot/examples/find-map-all-books/main.go" }}</textarea>
-            <p>
-              Thanks for giving <code>db</code> a try! See more {{ anchor "/examples" "examples" }} or <b>{{ anchor "/getting-started" "get started" }}</b>.
-            </p>
           {{ else }}
 
             {{ if .Content }}
